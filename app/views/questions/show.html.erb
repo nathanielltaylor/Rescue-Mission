@@ -1,0 +1,15 @@
+<h2><%= @question.title %></h1>
+  <p>Asked by <%= @question.user.username %></p>
+  <p>Asked at <%= @question.created_at %>
+  <p><%= @question.body %></p>
+
+<h4>Answers</h4>
+<% if @question.answers.length != 0 %>
+  <% @question.answers.each do |answer| %>
+    <p><%= answer.user.username %> responded: <p>
+    <p><%= answer.title %><p>
+    <p><%= answer.body %><p>
+  <% end %>
+<% else %>
+  <p>This question does not yet have any answers<p>
+<% end %>
