@@ -13,3 +13,5 @@
 <% else %>
   <p>This question does not yet have any answers<p>
 <% end %>
+
+<%= link_to "Submit an Answer", new_question_answer_path(params[:id]) %>
