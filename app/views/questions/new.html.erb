@@ -1,3 +1,9 @@
+<% if flash.any? %>
+  <% flash.each do |notice| %>
+    <%= notice[1] %>
+  <% end %>
+<% end %>
+
 <h1>Ask a Question</h1>
 
   <%= form_for @question, url: {action: "create"} do |f| %>

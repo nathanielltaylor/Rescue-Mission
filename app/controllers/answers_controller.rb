@@ -17,7 +17,7 @@ class AnswersController < ApplicationController
         format.html { redirect_to @question, notice: 'Answer was successfully submitted.' }
         format.json { render :show, status: :created, location: @question }
       else
-        format.html { render :new }
+        format.html { redirect_to new_question_answer_path, notice: 'Please fill out both fields' }
         format.json { render json: @answer.errors, status: :unprocessable_entity }
       end
     end
