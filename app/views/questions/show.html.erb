@@ -8,6 +8,7 @@
   <p>Asked by <%= @question.user.username %></p>
   <p>Asked at <%= @question.created_at %>
   <p><%= @question.body %></p>
+  <%= link_to 'Edit', edit_question_path(@question.id) %>
 
 <h4>Answers</h4>
 <% if @question.answers.length != 0 %>
