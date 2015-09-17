@@ -12,4 +12,28 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+$color: #FFFFD4;
+$push: 10px;
+
+ table {
+    width: 100%;
+}
+
+.flash {
+  background-color: green;
+  color: white;
+}
+
+.answer {
+  background-color: $color;
+  margin: $push;
+}
+
+.question {
+  background-color: $color;
+  padding: $push;
+  margin: $push;
+}

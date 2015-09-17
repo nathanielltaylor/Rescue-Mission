@@ -1,8 +1,4 @@
-<% if flash.any? %>
-  <% flash.each do |notice| %>
-    <%= notice[1] %>
-  <% end %>
-<% end %>
+<%= render "layouts/flash" %>
 
 <h1>Ask a Question</h1>
 

@@ -1,26 +1,40 @@
-<% if flash.any? %>
-  <% flash.each do |notice| %>
-    <%= notice[1] %>
-  <% end %>
-<% end %>
+<div class="row">
+<div class="small-2 large-4 columns">
 
+<%= render "layouts/flash" %>
+
+<div class="question">
 <h2><%= @question.title %></h1>
   <p>Asked by <%= @question.user.username %></p>
   <p>Asked at <%= @question.created_at %>
   <p><%= @question.body %></p>
   <%= link_to 'Edit', edit_question_path(@question.id) %>
+</div>
+</div>
+</div>
+
+<div class="row">
 
 <h4>Answers</h4>
 <% if @question.answers.length != 0 %>
   <% @question.answers.each do |answer| %>
-    <p><%= answer.user.username %> responded: <p>
+    <div class="large-4 columns answer end">
+    <span><%= answer.user.username %> responded: </span>
     <h4><%= answer.title %></h4>
-    <p><%= answer.body %><p>
-    <br>
+    <span><%= answer.body %></span>
+    <p>Best? <%= answer.best %></p>
+      <%= check_box_tag(:best) %>
+  	  <%= label_tag(:best) %>
+    </div>
   <% end %>
 <% else %>
   <p>This question does not yet have any answers<p>
 <% end %>
+</div>
 
+<div class="row">
+<div class="small-4 large-4 large-offset-10 columns">
 <p><%= link_to "Submit an Answer", new_question_answer_path(params[:id]) %></p>
 <p><%= link_to "Home", questions_path %></p>
+</div>
+</div>

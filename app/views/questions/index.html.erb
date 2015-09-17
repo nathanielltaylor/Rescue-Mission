@@ -1,4 +1,4 @@
-<table style="width:100%" class="table">
+<table class="table">
   <tr>
     <th>Question</th>
     <th>Asked By</th>
@@ -7,13 +7,13 @@
     <th>Edit<th>
   </tr>
 
-  <% @questions.reverse_each do |question| %>
+  <% @questions.each do |question| %>
     <tr>
-      <td style="text-align:center"><%= link_to question.title, question_path(question.id)%></td>
-      <td style="text-align:center"><%= question.user.username %></td>
-      <td style="text-align:center"><%= question.created_at %></td>
-      <td style="text-align:center"><%= link_to 'Delete', question_path(question.id), method: :delete %></td>
-      <td style="text-align:center"><%= link_to 'Edit', edit_question_path(question.id) %></td>
+      <td><%= link_to question.title, question_path(question.id)%></td>
+      <td><%= question.user.username %></td>
+      <td><%= question.created_at %></td>
+      <td><%= link_to 'Delete', question_path(question.id), method: :delete %></td>
+      <td><%= link_to 'Edit', edit_question_path(question.id) %></td>
     <tr>
   <% end %>
 </table>

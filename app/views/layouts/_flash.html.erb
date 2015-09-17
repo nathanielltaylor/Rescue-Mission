@@ -1,0 +1,5 @@
+<% if flash.any? %>
+  <% flash.each do |notice| %>
+    <p class="flash"><%= notice[1] %></p>
+  <% end %>
+<% end %>
